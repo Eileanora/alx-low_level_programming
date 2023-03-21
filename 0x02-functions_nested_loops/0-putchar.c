@@ -12,8 +12,8 @@ int main(void)
 {
 	int i = 0;
 	char arr[] = {'_', 'p', 'u', 't', 'c', 'h', 'a', 'r'};
-	
-	for (; i < 9; i++)
+
+	for (; i < 8; i++)
 		_putchar(arr[i]);
 	_putchar('\n');
 	return (0);
