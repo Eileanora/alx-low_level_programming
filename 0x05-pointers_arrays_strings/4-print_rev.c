@@ -22,6 +22,6 @@ void rec(char *s)
 {
 	if (*s == '\0')
 		return;
-	rec(++s);
+	rec(s + 1);
 	_putchar(*s);
 }
