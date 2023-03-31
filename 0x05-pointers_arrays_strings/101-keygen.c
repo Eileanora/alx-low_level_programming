@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <time.h> 
 #include <string.h>
 /**
  * main - program to generate random valid passwords
@@ -22,4 +23,5 @@ int main(void)
                 printf("%c", str[rand() % (len - 1)]);
         }
         printf("\n");
+        return (0);
 }
