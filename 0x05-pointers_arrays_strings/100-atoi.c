@@ -25,7 +25,7 @@ int _atoi(char *s)
 			minus = !minus;
 		else if (ans != 0)
 			break;
-		s++
+		s++;
 	}
 	if (minus)
 		ans *= -1;
