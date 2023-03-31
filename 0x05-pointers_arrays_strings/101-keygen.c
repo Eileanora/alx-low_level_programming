@@ -15,10 +15,10 @@ int main(void)
 {
         char str [] = {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"};
         int len = strlen(str);
-        int i;
+        int i , sz = rand(0 , 10);
 
         srand(time(NULL));
-        for (i = 0; i < 10; i++)
+        for (i = 0; i < sz; i++)
         {
                 printf("%c", str[rand() % (len - 1)]);
         }
