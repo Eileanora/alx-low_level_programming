@@ -15,7 +15,7 @@ int main(void)
 {
         char str [] = {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"};
         int len = strlen(str);
-        int i , sz = rand(0 , 10);
+        int i , sz = rand() % 100;
 
         srand(time(NULL));
         for (i = 0; i < sz; i++)
