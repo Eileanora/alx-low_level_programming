@@ -2,28 +2,35 @@
 
 char _putchar(char c)
 {
-	_putchar(c);
+	putchar(c);
 	return c;
 }
 /*---------------------------------------------------------------------------------------------------------------------------*/
 /**
- * _strchr - locates a character in a string
- * @s: string to search in
- * @c: target character
+ * print_diagsums - prints the sum of the two diagonals
+ * @a: 2D array casted as a pointer
+ * @size: size of the array
+ * sum1: sum of the first diagonal
+ * sum2: sum of the second diagonal
+ * r: row
+ * c: column
  *
- * Return: pointer to answer if found else NULL
+ * Return: always void
 */
-char *_strchr(char *s, char c)
+void print_diagsums(int *a, int size)
 {
-	while (*s != '\0')
+	int sum1 = 0, sum2 = 0, r, c;
+
+	for (r = 0; r < size; r++)
 	{
-		if (*s == c)
-			return (s);
-		s++;
+		sum1 += *(a + (r * size) + r);
+		sum2 += *(a + (r * size) + (size - r - 1));
 	}
-	return (NULL);
+	printf("%d, %d \n", sum1, sum2);
 }
+
 /*------------------------------------------------------------------------------------------------------------------------------------*/
+
 /**
  * main - check the code
  *
@@ -31,14 +38,19 @@ char *_strchr(char *s, char c)
  */
 int main(void)
 {
-    char *s = "hello";
-    char *f;
-
-    f = _strchr(s, 'o');
-
-    if (f != NULL)
-    {
-        printf("%s\n", f);
-    }
+    int c3[3][3] = {
+        {0, 1, 5},
+        {10, 11, 12},
+        {1000, 101, 102},
+    };
+    int c5[5][5] = {
+        {0, 1, 5, 12124, 1234},
+        {10, 11, 12, 123521, 12512},
+        {1000, 101, 102, 12545, 214543435},
+        {100, 1012451, 11102, 12545, 214543435},
+        {10, 12401, 10452, 11542545, 1214543435},
+    };
+    print_diagsums((int *)c3, 3);
+    print_diagsums((int *)c5, 5);
     return (0);
 }
