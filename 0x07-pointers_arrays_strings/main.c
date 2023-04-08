@@ -29,6 +29,22 @@ void print_diagsums(int *a, int size)
 	printf("%d, %d \n", sum1, sum2);
 }
 
+char *_strcat(char *dest, char *src)
+{
+	int i = 0, j = 0;
+
+	while (dest[i] != '\0')
+		i++;
+	while (src[j] != '\0')
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
 /*------------------------------------------------------------------------------------------------------------------------------------*/
 
 /**
@@ -38,19 +54,15 @@ void print_diagsums(int *a, int size)
  */
 int main(void)
 {
-    int c3[3][3] = {
-        {0, 1, 5},
-        {10, 11, 12},
-        {1000, 101, 102},
-    };
-    int c5[5][5] = {
-        {0, 1, 5, 12124, 1234},
-        {10, 11, 12, 123521, 12512},
-        {1000, 101, 102, 12545, 214543435},
-        {100, 1012451, 11102, 12545, 214543435},
-        {10, 12401, 10452, 11542545, 1214543435},
-    };
-    print_diagsums((int *)c3, 3);
-    print_diagsums((int *)c5, 5);
+    char s1[98] = "Hello ";
+    char s2[] = "World!\n";
+    char *ptr;
+
+//     printf("%s\n", s1);
+//     printf("%s", s2);
+    ptr = _strcat(s1, s2);
+    printf("%s", s1);
+    printf("%s", s2);
+    printf("%s", ptr);
     return (0);
 }
