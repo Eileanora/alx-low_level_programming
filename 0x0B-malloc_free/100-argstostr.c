@@ -17,7 +17,7 @@ int _strlen(char *str)
 		sz++;
 		str++;
 	}
-	return (sz + 1);
+	return (sz);
 }
 /**
  * argstostr - concatenates all the arguments of your program
@@ -38,7 +38,7 @@ char *argstostr(int ac, char **av)
 	{
 		sz += _strlen(av[i]);
 	}
-	ans = malloc(sizeof(char) * (sz + ac + 1));
+	ans = malloc(sizeof(char) * (sz + ac));
 	if (ans == NULL)
 		return (NULL);
 	for (i = 0; i < ac; i++)
