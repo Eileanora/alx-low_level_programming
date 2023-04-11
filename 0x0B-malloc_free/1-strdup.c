@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdlib.h>.0
+#include <stdlib.h>
 /**
  * _strlen - checks the size of a given string
  * @str: string to check size of
