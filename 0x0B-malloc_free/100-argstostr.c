@@ -17,7 +17,7 @@ int _strlen(char *str)
 		sz++;
 		str++;
 	}
-	return (sz);
+	return (sz + 1);
 }
 /**
  * argstostr - concatenates all the arguments of your program
