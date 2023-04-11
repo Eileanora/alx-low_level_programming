@@ -9,7 +9,8 @@
 int _strlen(char *str)
 {
 	int sz = 0;
-
+	if (str == NULL)
+		return (0);
 	while (*str != '\0')
 	{
 		sz++;
@@ -28,6 +29,7 @@ int _strlen(char *str)
 char *str_concat(char *s1, char *s2)
 {
 	int sz1, sz2, i;
+
 	char *ans;
 
 	sz1 = _strlen(s1);

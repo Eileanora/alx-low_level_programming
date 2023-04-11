@@ -9,7 +9,8 @@
 int _strlen(char *str)
 {
 	int sz = 0;
-
+	if (str == NULL)
+		return (0);
 	while (*str != '\0')
 	{
 		sz++;
@@ -27,13 +28,14 @@ int _strlen(char *str)
 char *argstostr(int ac, char **av)
 {
 	int i, j, sz, m = 0;
+
 	char *ans;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
 	for (i = 0; i < ac; i++)
 		sz += _strlen(av[i]);
-	ans = malloc((sz + ac + 1) * sizeof(char));
+	ans = malloc((sz + ac) * sizeof(char) + 1);
 	if (ans == NULL)
 		return (NULL);
 	for (i = 0; i < ac; i++)
