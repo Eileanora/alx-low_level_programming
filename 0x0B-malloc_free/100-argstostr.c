@@ -28,7 +28,7 @@ int _strlen(char *str)
  */
 char *argstostr(int ac, char **av)
 {
-	int i, j, sz, m = 0;
+	int i, j, sz, m = 0, len;
 
 	char *ans;
 
@@ -41,7 +41,8 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; av[i][j] != '\0'; j++)
+		len = _strlen(av[i]);
+		for (j = 0; j < len; j++)
 		{
 			ans[m] = av[i][j];
 			m++;
