@@ -42,13 +42,13 @@ char *str_concat(char *s1, char *s2)
 	for (i = 0; i < sz1; i++)
 		ans[i] = s1[i];
 	i = sz1;
-	while (*s2 != '\0')
+	while (sz2 > 0)
 	{
 		ans[i] = *s2;
 		s2++;
 		i++;
+		sz2--;
 	}
 	ans[i] = '\0';
 	return (ans);
 }
-
