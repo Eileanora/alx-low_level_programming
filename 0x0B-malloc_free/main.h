@@ -8,7 +8,8 @@ char *str_concat(char *s1, char *s2);
 char *str_concat(char *s1, char *s2);
 char *str_concat(char *s1, char *s2);
 int _strlen(char *str);
-
+char *argstostr(int ac, char **av);
+char **strtow(char *str);
 #endif
 /**
  * string literals char *str = "btats" is read only memory
