@@ -2,6 +2,25 @@
 #include <stdlib.h>
 #include <string.h>
 /**
+ * _strlen - checks the size of a given string
+ * @str: string to check size of
+ *
+ * Return: size of string (int)
+*/
+int _strlen(char *str)
+{
+	int sz = 0;
+
+	if (str == NULL)
+		return (0);
+	while (*str != '\0')
+	{
+		sz++;
+		str++;
+	}
+	return (sz + 1);
+}
+/**
  * argstostr - concatenates all the arguments of your program
  * @ac: number of arguments
  * @av: array of arguments
@@ -21,7 +40,7 @@ char *argstostr(int ac, char **av)
 		sz += strlen(av[i]);
 	}
 	sz += ac;
-	ans = malloc(sizeof(char) * sz + 1);
+	ans = malloc((sizeof(char) * sz) + 1);
 	if (ans == NULL)
 		return (NULL);
 	for (i = 0; i < ac; i++)
