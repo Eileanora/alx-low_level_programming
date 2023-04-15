@@ -12,7 +12,3 @@ tasks details:
    - Write a function that reallocates a memory block using malloc and free.
 101-mul.c
    - Write a program that multiplies two positive numbers.
-102-infinite_add.c
-   - Write a function that adds two numbers.
-103-print_buffer.c
-   - Write a function that prints a buffer.
