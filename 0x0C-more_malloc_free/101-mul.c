@@ -72,7 +72,7 @@ char *mul(char *s1, char *s2)
 int main(int argc, char *argv[])
 {
 	char *ans;
-	int i, sz1, sz2;
+	int i = 0, sz1, sz2;
 
 	if (argc != 3 || !_isdigit(argv[1]) || !_isdigit(argv[2]))
 	{
@@ -92,7 +92,7 @@ int main(int argc, char *argv[])
 
 	if (i == sz1 + sz2)
 	{
-		printf("0");
+		printf("0\n");
 		exit(0);
 	}
 	for (; i < sz1 + sz2; i++)
