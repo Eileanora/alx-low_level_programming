@@ -31,7 +31,7 @@ int _strlen(char *str)
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int sz1, sz2, sz, i, j;
+	unsigned int sz1, sz2, sz, i, j;
 	char *ans;
 
 	sz1 = _strlen(s1);
