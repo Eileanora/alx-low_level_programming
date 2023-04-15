@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 /**
  * _isdigit - checks if a string is a number
  * @s: string to check
