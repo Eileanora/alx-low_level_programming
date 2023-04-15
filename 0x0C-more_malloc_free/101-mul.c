@@ -76,13 +76,17 @@ int main(int argc, char *argv[])
 
 	if (argc != 3 || !_isdigit(argv[1]) || !_isdigit(argv[2]))
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(98);
 	}
 	sz1 = _strlen(argv[1]);
 	sz2 = _strlen(argv[2]);
 	ans = mul(argv[1], argv[2]);
-
+	if (ans == NULL)
+	{
+		printf("Error\n");
+		exit(98);
+	}
 	while (i < sz1 + sz2 && ans[i] == 0)
 		i++;
 
@@ -94,5 +98,6 @@ int main(int argc, char *argv[])
 	for (; i < sz1 + sz2; i++)
 		printf("%d", ans[i]);
 	printf("\n");
+	free(ans);
 	return (0);
 }
