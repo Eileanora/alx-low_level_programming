@@ -41,7 +41,7 @@ int _strlen(char *s)
 */
 char *mul(char *s1, char *s2)
 {
-	int sz1, sz2, i, j;
+	int sz1, sz2, i, j, carry, prod;
 	char *ans;
 
 	sz1 = _strlen(s1);
@@ -51,14 +51,17 @@ char *mul(char *s1, char *s2)
 	if (ans == NULL)
 		return (NULL);
 
-	for (i = 0; i < sz1; i++)
+	for (i = sz1 - 1; i >= 0; i--)
 	{
-		for (j = 0; j < sz2; j++)
+		carry = 0;
+		for (j = sz2 - 1; j >= 0; j--)
 		{
-			ans[i + j + 1] += (s1[i] - '0') * (s2[j] - '0');
-			ans[i + j] += ans[i + j + 1] / 10;
-			ans[i + j + 1] %= 10;
+			prod = (s1[i] - '0') * (s2[j] - '0') + carry + ans[i + j + 1];
+			carry = prod / 10;
+			ans[i + j + 1] = prod % 10;
 		}
+		if (carry > 0)
+			ans[i + j + 1] += carry;
 	}
 	return (ans);
 }
@@ -87,14 +90,9 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	while (i < sz1 + sz2 && ans[i] == 0)
+	while (i < sz1 + sz2 - 1 && ans[i] == 0)
 		i++;
 
-	if (i == sz1 + sz2)
-	{
-		printf("0\n");
-		exit(0);
-	}
 	for (; i < sz1 + sz2; i++)
 		printf("%d", ans[i]);
 	printf("\n");
