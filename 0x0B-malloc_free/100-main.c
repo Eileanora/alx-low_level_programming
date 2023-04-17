@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 
 /**
  * _putchar - writes the character c to stdout
@@ -26,14 +27,9 @@ int _putchar(char *c)
  */
 int main(int ac, char *av[])
 {
-    char *s;
+    int sz = sizeof("best school");
+    int sz2 = strlen("best school");
+    printf("%d %d\n", sz, sz2);
 
-    s = argstostr(ac, av);
-    if (s == NULL)
-    {
-        return (1);
-    }
-    printf("%s", s);
-    free(s);
     return (0);
 }
