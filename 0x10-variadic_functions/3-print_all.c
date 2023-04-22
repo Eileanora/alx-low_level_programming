@@ -38,9 +38,11 @@ void print_string(va_list list)
 	char *s = va_arg(list, char*);
 
 	if (s == NULL)
+	{
 		printf("(nil)");
-	else
-		printf("%s", s);
+		return;
+	}
+	printf("%s", s);
 }
 /**
  * print_all - print anything in paramerters
