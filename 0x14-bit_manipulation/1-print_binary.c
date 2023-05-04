@@ -6,13 +6,21 @@
 */
 void print_binary(unsigned long int n)
 {
-	int i;
+	int i, flag = 0;
 
-	for (i = 31; i >= 0; i--)
+	i = sizeof(n) * 8 - 1;
+	if (n == 0)
+		_putchar('0');
+
+	while (i >= 0)
 	{
-		if (n & (1 << i))
+		if ((n >> i) & 1)
+		{
 			_putchar('1');
-		else
+			flag = 1;
+		}
+		else if (flag)
 			_putchar('0');
+		i--;
 	}
 }
