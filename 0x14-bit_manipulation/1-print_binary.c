@@ -8,7 +8,7 @@ void print_binary(unsigned long int n)
 {
 	int i;
 
-	for (int i = 31; i >= 0; i--)
+	for (i = 31; i >= 0; i--)
 	{
 		if (n & (1 << i))
 			_putchar('1');

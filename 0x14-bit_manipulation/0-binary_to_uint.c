@@ -29,7 +29,8 @@ unsigned int binary_to_uint(const char *b)
 	{
 		if (b[i] != '0' && b[i] != '1')
 			return (0);
-		ans += (b[i] - '0') * raise_power((int)_strlen(b) - i - 1, 2);
+		if (b[i] == '1')
+			ans += raise_power(i, 2);
 		i++;
 	}
 	return (ans);
