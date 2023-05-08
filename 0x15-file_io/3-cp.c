@@ -5,7 +5,7 @@
  * open_file - opens a file
  * @filename: name of file to be opened
  * @fd_from: file descriptor of file to be opened
- * fd_to: file descriptor of file to be copied to
+ * @fd_to: file descriptor of file to be copied to
 */
 void open_file(char *filename, int *fd_from, int *fd_to)
 {
@@ -28,9 +28,8 @@ void open_file(char *filename, int *fd_from, int *fd_to)
  * close_file - closes a file
  * @fd_from: file descriptor of file to be closed
  * @fd_to: file descriptor of file to be closed
- * @filename: name of file to be closed
 */
-void close_file(int *fd_from, int *fd_to, char *filename)
+void close_file(int *fd_from, int *fd_to)
 {
 	int close_from, close_to;
 
@@ -102,7 +101,7 @@ int main(int argc, char *argv[])
 
 	open_file(argv[1], &fd_from, &fd_to);
 	copy_file(&fd_from, &fd_to, argv[1]);
-	close_file(&fd_from, &fd_to, argv[1]);
+	close_file(&fd_from, &fd_to);
 
 	return (0);
 }
