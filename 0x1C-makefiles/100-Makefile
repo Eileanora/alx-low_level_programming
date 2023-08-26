@@ -13,10 +13,10 @@ ${NAME}: ${OBJ} m.h
 	$(CC) ${CFLAGS} -c $< -o $@
 
 clean:
-	${RM} -f *~ ${NAME}
+	${RM} *~ ${NAME}
 
 oclean:
-	${RM} -f ${OBJ}
+	${RM} ${OBJ}
 
 fclean: clean oclean
 
