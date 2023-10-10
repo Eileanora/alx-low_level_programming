@@ -22,7 +22,7 @@ void print_array(int l, int r, int *array)
 */
 int binary_search(int *array, size_t size, int target)
 {
-	int l = 0, r = size, mid;
+	int l = 0, r = size - 1, mid;
 
 	if (array == NULL)
 		return (-1);
