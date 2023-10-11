@@ -9,9 +9,13 @@
 void print_array(size_t l, size_t r, int *array)
 {
 	printf("Searching in array: ");
-	while (l < r - 1)
-		printf("%d ,", array[l++]);
-	printf("%d\n", array[l]);
+	while (l <= r)
+	{
+		if (l == r)
+			printf("%d\n", array[l++]);
+		else
+			printf("%d, ", array[l++]);
+	}
 }
 /**
  * binary_search - searches for an element using the binary search algorithm
