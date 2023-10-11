@@ -6,12 +6,12 @@
  * @array: array to print
  * Return: void
 */
-void print_array(int l, int r, int *array)
+void print_array(size_t l, size_t r, int *array)
 {
 	printf("Searching in array: ");
 	while (l < r - 1)
 		printf("%d ,", array[l++]);
-	printf("%d", array[l]);
+	printf("%d\n", array[l]);
 }
 /**
  * binary_search - searches for an element using the binary search algorithm
@@ -22,12 +22,13 @@ void print_array(int l, int r, int *array)
 */
 int binary_search(int *array, size_t size, int target)
 {
-	int l = 0, r = size - 1, mid;
+	size_t l = 0, r = size - 1, mid;
 
 	if (array == NULL)
 		return (-1);
 	while (l <= r)
 	{
+		print_array(l, r, array);
 		mid = l + (r - l) / 2;
 		if (array[mid] == target)
 			return (mid);
